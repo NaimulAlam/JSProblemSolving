@@ -1,3 +1,27 @@
+class Rectangle {
+    constructor(w, h) {
+        this.w = w;
+        this.h = h;
+    }
+}
+
+/* Write code that adds an 'area' method to the Rectangle class' prototype */
+Rectangle.prototype.area = function () { 
+  return (this.w * this.h);
+}
+
+/* Create a Square class that inherits from Rectangle and implement its class constructor */
+class Square extends Rectangle {
+    constructor(s) {
+      super(s)
+      this.h = s;
+      this.w = s;
+    }
+}
+
+console.log("Squre of 7", new Square(7).area());
+
+// Inheritence Practice
 const Employee = function (name) {
   this.name = name;
 };
@@ -20,8 +44,8 @@ PermanetEmployee.prototype = employee;
 
 var pe = new PermanetEmployee(5000);
 
-console.log(pe.getName());
-console.log(pe instanceof PermanetEmployee);
+console.log("PermanentEmployee :", pe.getName());
+console.log("Instance of PermanentEmployee :", pe instanceof PermanetEmployee);
 console.log(pe.getNameLength());
 console.log("employee.name :", employee.hasOwnProperty("name"));
 console.log("PermanentEmployee.annulSalary :", pe.hasOwnProperty("annaulSalary"));
